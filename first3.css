@@ -1,0 +1,24 @@
+body {
+    border-style: double;
+    border-width: 10px;
+    border-image: ;
+    margin: 130px;
+    height: 100vh;
+    max-width: 400px;
+    padding: 20px;
+    border-color:darkblue;
+    border-radius: 20px;
+    background-color: white;
+    grid-template-columns: 1fr 1fr; 
+}
+.sano {
+    background-color: #f1f1fa
+}
+.linaa {
+    background-color: hsl(0, 0%, 100%)
+}
+form {
+    gap: 10px;
+    margin: 20px;
+}
+

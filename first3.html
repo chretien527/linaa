@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="first3.css">
+</head>
+
+<body class="linaa">
+    <h2>Student Access Inquiry</h2>
+    <form>
+        <div>
+            <div>
+                <label for="firstname">firstname: </label><br>
+                <input type="text" id="firstname" name="firstname" required class="sano"
+                    style=" border: none; background-color: rgb(226, 247, 253); height :25px; width: 310px;"><br>
+                <label for="lastname">lastname: </label><br>
+                <input type="text" id="lastname" name="lastname" required class="sano"
+                    style=" border: none; background-color: rgb(226, 247, 253); height :25px; width: 310px;"><br>
+                <label for="Email">Email: </label><br>
+                <input type="text" id="Email" name="Email" required class="sano"
+                    style=" border: none; background-color: rgb(226, 247, 253); height :25px; width: 310px;"><br>
+            </div>
+            <div>
+                <label> Gender </label><br>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label><br>
+                <input type="radio" id="Female" name="gender" value="female">
+                <label for="female">Female</label>
+            </div>
+            <div>
+                <label>Spoken Languages</label><br>
+                <input type="checkbox" id="kiny" name="languages" value="kinyarwanda" checked>
+                <label for="kiny">kinyarwanda</label><br>
+                <input type="checkbox" id="Eng" name="languages" value="English">
+                <label for="Eng">English</label><br>
+                <input type="checkbox" id="Fre" name="languages" value="French">
+                <label for=" Fre">French</label><br>
+                <input type="checkbox" id="Kisw" name="languages" value="Kiswahili">
+                <label for="Kisw">Kiswahili</label>
+            </div>
+            <label for="level"> Level: </label><br>
+            <select id="level" name="level"
+                style=" border: none; background-color: rgb(226, 247, 253); height :25px; width: 310px;">
+                <option value="senior 1">Senior 1</option>
+                <option value="senior 2">Senior 2</option>
+                <option value="senior 3">Senior 3</option>
+            </select><br>
+        </div>
+        <label for="password"> Password: </label><br>
+        <input type="password" id="password" name="password" required class="sano"
+            style=" border: none; background-color: rgb(226, 247, 253); height :25px; width: 310px;"><br>
+        <label for="request">Request: </label><br>
+        <textarea id="request" name="request" rows="4" cols="40"
+            style=" border: none; background-color: rgb(226, 247, 253); height :100px;"></textarea><br>
+        <button type="submit"
+            style="width: 310px; background-color: rgb(19, 12, 231); border: none; color: white; font-size: 1.3rem;">Submit</button>
+        </div>
+        </div>
+    </form>
+</body>
+
+</html>
