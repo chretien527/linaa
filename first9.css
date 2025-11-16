@@ -1,0 +1,132 @@
+.guava {
+    width: 1440px;
+}
+
+.image {
+    width: 350px;
+}
+
+.image-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 8px;
+    margin: 10px;
+    gap: 5px;
+
+}
+
+.title {
+    display: flex;
+    padding: 10px;
+    gap: 540px
+}
+
+.button {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    height: 25px;
+}
+
+.dadi {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+}
+
+.kurusu {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.sudo {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    height: 25px;
+    padding: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.atasa {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    height: 25px;
+    border: none;
+    height: 40px;
+    width: 75px;
+}
+
+.linaa {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 35px;
+}
+
+body {
+    font-family: arial, sans-serif;
+    padding-left: 40px;
+}
+
+.lina {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    height: 400px;
+    width: 400px;
+}
+
+.linna {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 400px;
+    height: 400px;
+    max-width: 2000px;
+    padding: 10px;
+    padding-bottom: 100px;
+}
+
+.sanu {
+    max-width: 1000px;
+    height: 500px;
+}
+
+.me {
+    padding-top: 40px;
+    width: 600px;
+}
+
+.btn {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    height: 40px;
+}
+
+.btn1 {
+    background-color: cadetblue;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    height: 40px;
+}
+
+.patrick {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1440px;
+    padding: 20px;
+    justify-content: space-evenly;
+}
+
+.meow {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+}

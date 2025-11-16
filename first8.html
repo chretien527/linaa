@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="rw">
+
+<head>
+  <meta charset="utf-8">
+  <title>Liste y'abakappo bashaka imbada</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* Optional basic styling */
+    body {
+      font-family: system-ui, sans-serif;
+      background: #f6f3ff;
+      margin: 0;
+      padding: 24px;
+    }
+
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px 24px;
+      border-radius: 12px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 1.5rem;
+    }
+
+    .subtitle {
+      color: #5f5f5f;
+      margin-top: -6px;
+    }
+
+    .field {
+      margin: 18px 0;
+    }
+
+    .field legend {
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .radio-group {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px 16px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 10px 16px;
+      border: 0;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .primary {
+      background: #7b61ff;
+      color: #fff;
+    }
+
+    .secondary {
+      background: #eee;
+    }
+
+    .note {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 12px;
+    }
+
+    .total {
+      margin-top: 8px;
+      font-weight: 600;
+    }
+
+    .other-wrap {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .other-input {
+      width: 120px;
+      padding: 6px 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <h1>Liste y'abakappo bashaka imbada</h1>
+    <p class="subtitle">Friday imbada schedule</p>
+
+    <!-- Replace action with your backend endpoint if you have one -->
+    <form id="imbada-form" action="" method="post" novalidate>
+      <!-- Question 1: Name -->
+      <div class="field">
+        <label for="name"><strong>What is your name *</strong></label><br>
+        <input type="text" id="name" name="name" required aria-required="true" placeholder="Your name">
+      </div>
+
+      <!-- Question 2: Number of imbada -->
+      <fieldset class="field">
+        <legend><strong>Umubare w'imbada (1 = 100 RWF) *</strong></legend>
+
+        <div class="radio-group" role="radiogroup" aria-labelledby="imbada-legend">
+          <label><input type="radio" name="imbada" value="1" required> 1</label>
+          <label><input type="radio" name="imbada" value="5"> 5</label>
+          <label><input type="radio" name="imbada" value="10"> 10</label>
+          <label><input type="radio" name="imbada" value="15"> 15</label>
+          <label><input type="radio" name="imbada" value="20"> 20</label>
+          <label><input type="radio" name="imbada" value="25"> 25</label>
+          <label><input type="radio" name="imbada" value="30"> 30</label>
+          <!-- Other option -->
+          <div class="other-wrap">
+            <label>
+              <input type="radio" name="imbada" value="other" id="imbada-other">
+              Other:
+            </label>
+            <input type="number" min="1" step="1" id="other-value" class="other-input" placeholder="Enter number"
+              disabled>
+          </div>
+        </div>
+
+        <p id="total-text" class="total" aria-live="polite">Total: 0 RWF</p>
+      </fieldset>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button type="submit" class="primary">Submit</button>
+        <button type="reset" class="secondary">Clear form</button>
+      </div>
+
+      <p class="note">Never submit passwords through this form.</p>
+    </form>
+  </main>
+
+  <script>
+    // Price per unit
+    const UNIT_PRICE = 100;
+
+    const form = document.getElementById('imbada-form');
+    const radios = Array.from(document.querySelectorAll('input[name="imbada"]'));
+    const otherRadio = document.getElementById('imbada-other');
+    const otherInput = document.getElementById('other-value');
+    const totalText = document.getElementById('total-text');
+
+    function getSelectedQuantity() {
+      const selected = radios.find(r => r.checked);
+      if (!selected) return 0;
+
+      if (selected.value === 'other') {
+        const v = parseInt(otherInput.value, 10);
+        return Number.isFinite(v) && v > 0 ? v : 0;
+      }
+      return parseInt(selected.value, 10);
+    }
+
+    function updateTotal() {
+      const qty = getSelectedQuantity();
+      totalText.textContent = `Total: ${qty * UNIT_PRICE} RWF`;
+    }
+
+    // Enable/disable the "Other" input dynamically
+    function syncOtherInputState() {
+      const isOther = otherRadio.checked;
+      otherInput.disabled = !isOther;
+      if (!isOther) otherInput.value = '';
+    }
+
+    // Events
+    radios.forEach(r => r.addEventListener('change', () => {
+      syncOtherInputState();
+      updateTotal();
+    }));
+
+    otherInput.addEventListener('input', updateTotal);
+
+    // Validate before submit (basic client-side)
+    form.addEventListener('submit', (e) => {
+      const nameOk = form.name.value.trim().length > 0;
+      const selected = radios.some(r => r.checked);
+      const qty = getSelectedQuantity();
+
+      if (!nameOk || !selected || qty <= 0) {
+        e.preventDefault();
+        alert('Please enter your name and select a valid imbada number.');
+      } else {
+        // If you have a backend, let it submit there.
+        // Without a backend, you can simulate or collect with FormSubmit/Netlify.
+      }
+    });
+
+    // Reset behavior
+    form.addEventListener('reset', () => {
+      setTimeout(() => {
+        syncOtherInputState();
+        updateTotal();
+      }, 0);
+    });
+
+    // Initial state
+    syncOtherInputState();
+    updateTotal();
+  </script>
+</body>
+
+</html>
