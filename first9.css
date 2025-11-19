@@ -33,6 +33,7 @@
     display: flex;
     gap: 20px;
     justify-content: flex-end;
+    padding-left: 550px;
 }
 
 .kurusu {
@@ -127,6 +128,48 @@ body {
 
 .meow {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    padding: 40px;
+    padding: 60px;
+}
+.jesus {
+    border: solid;
+    border-color:#e0e0e0;
+    padding: 20px;
+    border-radius: 7px;
+    padding-left: 110px;
+    padding-right: 110px;
+}
+.boxes {
+   margin: 60px;
+   margin-bottom: 3px;
+} 
+.david {
+    display: flex;
+    background-color: rgb(242, 241, 241);
+    background-size: cover;
+    margin: 0px;
+    padding: 70px;
+}
+.div1{
+    padding-left: 900px;
+    
+}
+.game {
+    display: grid;
+    font-size: .9rem;
+    grid-template-columns: repeat(5, 1fr);
+
+}
+.over {
+    padding-left: 900px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 90px;
+}
+.icon {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding-top: 100px; 
 }
