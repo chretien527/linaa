@@ -1,10 +1,82 @@
 .papa {
     padding-top: 70px;
 }
+
 .papa1 {
     width: 400px;
     padding-bottom: 50px;
 }
-.papa2{
-    width: 400px;
-}git 
+
+.Images {
+    display: flex;
+    flex-wrap: nowrap;
+    max-width: 1600;
+    column-gap: 30px;
+}
+
+.fox {
+    display: flex;
+}
+
+.force {
+    display: flex;
+    column-gap: 30px;
+}
+
+.linaa {
+    height: 40px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    width: 70px;
+}
+
+.view1 {
+    max-width: 600px;
+    padding-left: 350px;
+    padding-top: 40px;
+    padding-right: 270px;
+}
+
+.renard {
+    padding-left: 25px;
+}
+
+.renards {
+    display: flex;
+    column-gap: 20px;
+    padding-bottom: 100px;
+    margin-left: 20px;
+    max-width: 1600px;
+    flex-wrap: wrap;
+}
+
+.hm {
+    display: grid;
+    padding-left: 840px;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 150px;
+}
+
+.kendra {
+    display: flex;
+}
+
+.chat {
+    padding-left: 200px;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    margin-right: 350px;
+    text-align: left;
+}
+
+body {
+    margin-left: 60px;
+}
+
+.image2 {
+    max-width: 1600px;
+}
