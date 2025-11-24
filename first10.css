@@ -1,10 +1,13 @@
 .papa {
     padding-top: 70px;
+    text-align: center;
 }
 
 .papa1 {
     width: 400px;
     padding-bottom: 50px;
+    justify-content: center;
+    
 }
 
 .Images {
@@ -16,11 +19,17 @@
 
 .fox {
     display: flex;
+    max-width: 600px;
+    
 }
 
 .force {
-    display: flex;
     column-gap: 30px;
+    max-width: 600px;
+    text-align: ;
+}
+.mass {
+    padding-left: 1170px;
 }
 
 .linaa {
@@ -41,18 +50,7 @@
     padding-right: 270px;
 }
 
-.renard {
-    padding-left: 25px;
-}
 
-.renards {
-    display: flex;
-    column-gap: 20px;
-    padding-bottom: 100px;
-    margin-left: 20px;
-    max-width: 1600px;
-    flex-wrap: wrap;
-}
 
 .hm {
     display: grid;
@@ -63,6 +61,17 @@
 
 .kendra {
     display: flex;
+}
+.renards {
+    display: flex;
+    gap: 30px;
+    padding-top: 25px;
+    padding-left: 25px;
+
+}
+.renard {
+    padding-top: 20px;
+    padding-left: 25px;
 }
 
 .chat {
