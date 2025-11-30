@@ -6,7 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    iLOVE LINAA
+    <form>
+        <>
+    </form>
+    <?php
     
+    ?>
 </body>
 </html>
