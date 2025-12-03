@@ -17,6 +17,10 @@
     column-gap: 30px;
 }
 
+.headings {
+    display: flex;
+}
+
 .fox {
     display: flex;
     max-width: 600px;
@@ -24,6 +28,8 @@
 }
 
 .force {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     column-gap: 30px;
     max-width: 600px;
     text-align: ;
